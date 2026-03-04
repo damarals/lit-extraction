@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from litreview.io.metadata import PaperMetadata
+from src.io.metadata import PaperMetadata
 
 
 def _valid_extraction_payload() -> dict[str, Any]:
@@ -143,7 +143,7 @@ def test_pipeline_marks_partial_when_one_model_fails(tmp_path: Path) -> None:
         pdf_path=pdf_path.as_posix(),
     )
 
-    from litreview.pipeline.stages import PipelineModels, process_paper
+    from src.pipeline.stages import PipelineModels, process_paper
 
     client = FakeRouterClient()
     result = process_paper(
@@ -177,7 +177,7 @@ def test_pipeline_fails_when_ocr_fails(tmp_path: Path) -> None:
         pdf_path=bad_path.as_posix(),
     )
 
-    from litreview.pipeline.stages import PipelineModels, process_paper
+    from src.pipeline.stages import PipelineModels, process_paper
 
     client = FakeRouterClient()
     result = process_paper(

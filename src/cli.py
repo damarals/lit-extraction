@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import typer
 
-from litreview.config import load_runtime_config
-from litreview.io.ocr_lighton import LightOnOCRExtractor
-from litreview.pipeline.stages import PipelineModels, run_pipeline
-from litreview.providers.openrouter import OpenRouterClient
+from src.config import load_runtime_config
+from src.io.ocr_lighton import LightOnOCRExtractor
+from src.pipeline.stages import PipelineModels, run_pipeline
+from src.providers.openrouter import OpenRouterClient
 
 app = typer.Typer(help="LitReview multi-LLM extraction pipeline.")
 

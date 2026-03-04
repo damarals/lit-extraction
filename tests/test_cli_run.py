@@ -4,8 +4,8 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from litreview.cli import app
-from litreview.config import RuntimeConfig
+from src.cli import app
+from src.config import RuntimeConfig
 
 
 def test_cli_run_processes_metadata_file(
@@ -56,8 +56,8 @@ def test_cli_run_processes_metadata_file(
             "failed": 0,
         }
 
-    monkeypatch.setattr("litreview.cli.load_runtime_config", fake_load_runtime_config)
-    monkeypatch.setattr("litreview.cli.run_pipeline", fake_run_pipeline)
+    monkeypatch.setattr("src.cli.load_runtime_config", fake_load_runtime_config)
+    monkeypatch.setattr("src.cli.run_pipeline", fake_run_pipeline)
 
     runner = CliRunner()
     result = runner.invoke(

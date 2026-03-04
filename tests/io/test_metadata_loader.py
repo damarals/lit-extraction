@@ -9,7 +9,7 @@ def test_load_metadata_validates_pdf_path(tmp_path: Path) -> None:
     metadata = tmp_path / "papers.json"
     metadata.write_text('[{"title":"A","pdf_path":"missing.pdf"}]', encoding="utf-8")
 
-    from litreview.io.metadata import MetadataValidationError, load_metadata
+    from src.io.metadata import MetadataValidationError, load_metadata
 
     with pytest.raises(MetadataValidationError):
         load_metadata(metadata)
@@ -24,7 +24,7 @@ def test_load_metadata_generates_paper_id_and_absolute_path(tmp_path: Path) -> N
         encoding="utf-8",
     )
 
-    from litreview.io.metadata import load_metadata
+    from src.io.metadata import load_metadata
 
     papers = load_metadata(metadata)
     assert len(papers) == 1

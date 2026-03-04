@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_extraction_prompt_mentions_pdf_attachment_and_json_only() -> None:
-    from litreview.prompts.extraction_prompt import build_extraction_prompt
+    from src.prompts.extraction_prompt import build_extraction_prompt
 
     prompt = build_extraction_prompt(
         title="Urban sensor placement",
@@ -15,7 +15,7 @@ def test_extraction_prompt_mentions_pdf_attachment_and_json_only() -> None:
 
 
 def test_qa_prompt_mentions_score_range_and_evidence() -> None:
-    from litreview.prompts.qa_prompt import build_qa_prompt
+    from src.prompts.qa_prompt import build_qa_prompt
 
     prompt = build_qa_prompt(
         title="Urban sensor placement",
@@ -26,7 +26,7 @@ def test_qa_prompt_mentions_score_range_and_evidence() -> None:
 
 
 def test_consolidation_prompts_embed_model_outputs() -> None:
-    from litreview.prompts.consolidation_prompt import (
+    from src.prompts.consolidation_prompt import (
         build_extraction_consolidation_prompt,
         build_qa_consolidation_prompt,
     )

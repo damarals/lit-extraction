@@ -35,7 +35,7 @@ def test_openrouter_client_uses_auth_header_and_attachment_payload() -> None:
 
     transport = httpx.MockTransport(handler)
 
-    from litreview.providers.openrouter import OpenRouterClient
+    from src.providers.openrouter import OpenRouterClient
 
     client = OpenRouterClient(
         api_key="test-key",
@@ -84,7 +84,7 @@ def test_openrouter_client_retries_on_server_error() -> None:
 
     transport = httpx.MockTransport(handler)
 
-    from litreview.providers.openrouter import OpenRouterClient
+    from src.providers.openrouter import OpenRouterClient
 
     client = OpenRouterClient(
         api_key="k",
@@ -116,7 +116,7 @@ def test_openrouter_client_sends_default_sampling_params() -> None:
 
     transport = httpx.MockTransport(handler)
 
-    from litreview.providers.openrouter import OpenRouterClient
+    from src.providers.openrouter import OpenRouterClient
 
     client = OpenRouterClient(api_key="x", transport=transport)
     client.chat_json(model="google/gemini-2.5-pro", prompt="p")

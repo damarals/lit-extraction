@@ -1,4 +1,4 @@
 def test_package_import() -> None:
-    import litreview
+    import src
 
-    assert litreview.__name__ == "litreview"
+    assert src.__name__ == "src"

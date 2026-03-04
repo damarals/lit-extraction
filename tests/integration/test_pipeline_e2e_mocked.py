@@ -131,7 +131,7 @@ def test_e2e_mocked_run_creates_expected_output_tree(tmp_path: Path) -> None:
         encoding="utf-8",
     )
 
-    from litreview.pipeline.stages import PipelineModels, run_pipeline
+    from src.pipeline.stages import PipelineModels, run_pipeline
 
     summary = run_pipeline(
         metadata_path=metadata_path,

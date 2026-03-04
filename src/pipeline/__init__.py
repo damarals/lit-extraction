@@ -1,4 +1,4 @@
-from litreview.pipeline.stages import (
+from src.pipeline.stages import (
     PaperRunResult,
     PipelineModels,
     process_paper,

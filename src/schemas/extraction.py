@@ -4,7 +4,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from litreview.schemas.common import YesNo
+from src.schemas.common import YesNo
 
 
 class Bibliographic(BaseModel):

@@ -5,17 +5,17 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
-from litreview.consolidation.gemini import (
+from src.consolidation.gemini import (
     consolidate_extraction_form,
     consolidate_qa_form,
 )
-from litreview.io.metadata import PaperMetadata, load_metadata
-from litreview.io.ocr_lighton import OCRError
-from litreview.persistence.filesystem import save_paper_outputs
-from litreview.prompts.extraction_prompt import build_extraction_prompt
-from litreview.prompts.qa_prompt import build_qa_prompt
-from litreview.schemas.extraction import ExtractionFormV1
-from litreview.schemas.qa import QAFormV1
+from src.io.metadata import PaperMetadata, load_metadata
+from src.io.ocr_lighton import OCRError
+from src.persistence.filesystem import save_paper_outputs
+from src.prompts.extraction_prompt import build_extraction_prompt
+from src.prompts.qa_prompt import build_qa_prompt
+from src.schemas.extraction import ExtractionFormV1
+from src.schemas.qa import QAFormV1
 
 
 @dataclass(frozen=True)

@@ -6,7 +6,7 @@ import pytest
 
 
 def test_lighton_ocr_rejects_missing_pdf(tmp_path: Path) -> None:
-    from litreview.io.ocr_lighton import LightOnOCRExtractor, OCRError
+    from src.io.ocr_lighton import LightOnOCRExtractor, OCRError
 
     extractor = LightOnOCRExtractor()
     with pytest.raises(OCRError):
@@ -14,7 +14,7 @@ def test_lighton_ocr_rejects_missing_pdf(tmp_path: Path) -> None:
 
 
 def test_lighton_ocr_rejects_non_pdf(tmp_path: Path) -> None:
-    from litreview.io.ocr_lighton import LightOnOCRExtractor, OCRError
+    from src.io.ocr_lighton import LightOnOCRExtractor, OCRError
 
     file_path = tmp_path / "notes.txt"
     file_path.write_text("hello", encoding="utf-8")

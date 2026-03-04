@@ -1,4 +1,4 @@
-from litreview.consolidation.gemini import (
+from src.consolidation.gemini import (
     consolidate_extraction_form,
     consolidate_qa_form,
 )

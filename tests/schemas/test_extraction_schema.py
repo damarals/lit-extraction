@@ -5,14 +5,14 @@ from pydantic import ValidationError
 
 
 def test_extraction_requires_bibliographic() -> None:
-    from litreview.schemas.extraction import ExtractionFormV1
+    from src.schemas.extraction import ExtractionFormV1
 
     with pytest.raises(ValidationError):
         ExtractionFormV1.model_validate({})
 
 
 def test_extraction_accepts_minimal_valid_payload() -> None:
-    from litreview.schemas.extraction import ExtractionFormV1
+    from src.schemas.extraction import ExtractionFormV1
 
     payload = {
         "bibliographic": {

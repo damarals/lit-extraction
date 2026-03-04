@@ -5,14 +5,14 @@ from pydantic import ValidationError
 
 
 def test_qa_score_bounds() -> None:
-    from litreview.schemas.qa import QACriterion
+    from src.schemas.qa import QACriterion
 
     with pytest.raises(ValidationError):
         QACriterion(score_final=3, justification="x", evidence_text="y")
 
 
 def test_qa_total_score_computed() -> None:
-    from litreview.schemas.qa import QAFormV1
+    from src.schemas.qa import QAFormV1
 
     payload = {
         "problem_formalization": {

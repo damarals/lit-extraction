@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def test_persistence_writes_raw_and_consolidated(tmp_path: Path) -> None:
-    from litreview.persistence.filesystem import save_paper_outputs
+    from src.persistence.filesystem import save_paper_outputs
 
     out_dir = save_paper_outputs(
         output_root=tmp_path,

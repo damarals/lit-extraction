@@ -11,7 +11,7 @@ def test_build_pdf_attachment_content_for_valid_pdf(tmp_path: Path) -> None:
     pdf_bytes = b"%PDF-1.4\n%mock\n%%EOF\n"
     pdf_path.write_bytes(pdf_bytes)
 
-    from litreview.io.pdf_attachment import build_pdf_attachment_content
+    from src.io.pdf_attachment import build_pdf_attachment_content
 
     content = build_pdf_attachment_content(pdf_path)
 
@@ -23,7 +23,7 @@ def test_build_pdf_attachment_content_for_valid_pdf(tmp_path: Path) -> None:
 
 
 def test_build_pdf_attachment_rejects_missing_file(tmp_path: Path) -> None:
-    from litreview.io.pdf_attachment import AttachmentValidationError, build_pdf_attachment_content
+    from src.io.pdf_attachment import AttachmentValidationError, build_pdf_attachment_content
 
     with pytest.raises(AttachmentValidationError):
         build_pdf_attachment_content(tmp_path / "missing.pdf")
@@ -33,7 +33,7 @@ def test_build_pdf_attachment_rejects_non_pdf(tmp_path: Path) -> None:
     text_file = tmp_path / "notes.txt"
     text_file.write_text("hello", encoding="utf-8")
 
-    from litreview.io.pdf_attachment import AttachmentValidationError, build_pdf_attachment_content
+    from src.io.pdf_attachment import AttachmentValidationError, build_pdf_attachment_content
 
     with pytest.raises(AttachmentValidationError):
         build_pdf_attachment_content(text_file)

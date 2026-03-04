@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-litreview = "litreview.cli:app"
+litreview = "src.cli:app"
 
 [dependency-groups]
 dev = [
